@@ -8,22 +8,21 @@ package com.ghh.chat.client.config;
 import java.util.Properties;
 
 /**
- *
- * @author haihua.gu
- * Created on Sep 18, 2009
+ * 
+ * @author haihua.gu Created on Sep 18, 2009
  */
 
 public class NetworkSet {
 
-	private String file = Config.base_path + Config.network_file_name;
-	
-	private String ip;
-	private int port;
-	
+	private String	file	= Config.base_path + Config.network_file_name;
+
+	private String	ip;
+	private int		port;
+
 	public NetworkSet() {
 		initialize();
 	}
-	
+
 	private void initialize() {
 		Properties p = Config.loadProperties(file);
 		ip = p.getProperty(Config.NAME_SERVER_IP, "127.0.0.1");
@@ -36,7 +35,7 @@ public class NetworkSet {
 		p.setProperty(Config.NAME_SERVER_PORT, String.valueOf(port));
 		Config.saveProperties(p, file);
 	}
-	
+
 	public String getServerIp() {
 		return ip;
 	}
@@ -53,4 +52,3 @@ public class NetworkSet {
 		this.port = port;
 	}
 }
-

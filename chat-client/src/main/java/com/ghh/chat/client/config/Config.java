@@ -32,10 +32,6 @@ public class Config {
 		try {
 			base_path = base.getCanonicalPath() + File.separator;
 			icon_path = base_path + "icon" + File.separator;
-			
-			System.out.println(base_path);
-			System.out.println(icon_path);
-			
 		} catch (IOException e) {
 			throw new RuntimeException(e);
 		}

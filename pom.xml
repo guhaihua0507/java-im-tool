@@ -6,10 +6,22 @@
   <packaging>pom</packaging>
   <version>1.0.0-SNAPSHOT</version>
   <name>java im</name>
-  
- <modules>
+  <properties>
+  	<chat-version>1.0.0-SNAPSHOT</chat-version>
+  </properties>
+  <modules>
         <module>chat-common</module>
         <module>chat-server</module>
         <module>chat-client</module>
-      </modules>
+  </modules>
+  
+  <dependencyManagement>
+  	<dependencies>
+  		<dependency>
+			<groupId>org.json</groupId>
+			<artifactId>org.json</artifactId>
+			<version>chargebee-1.0</version>
+		</dependency>
+  	</dependencies>
+  </dependencyManagement>
 </project>

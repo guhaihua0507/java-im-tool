@@ -53,7 +53,6 @@ public class ClientCore {
 	}
 
 	public void maintenConnection() {
-		System.out.println("========================start mainten");
 		Executors.newSingleThreadScheduledExecutor().scheduleWithFixedDelay(ck, 0, 300, TimeUnit.SECONDS);
 		Executors.newSingleThreadScheduledExecutor().scheduleWithFixedDelay(ssk, Constants.sessionTimeout / 3, Constants.sessionTimeout / 3, TimeUnit.SECONDS);
 	}
