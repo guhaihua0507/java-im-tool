@@ -28,11 +28,12 @@ public class Config {
 	public static final String	NAME_USER_NAME		= "user_name";
 	public static final String	NAME_USER_ICON		= "user_icon";
 	static {
-		File base = new File(Config.class.getResource("/").getPath() + "../");
+		File base = new File(Config.class.getProtectionDomain().getCodeSource().getLocation().getPath()).getParentFile().getParentFile();
 		try {
 			base_path = base.getCanonicalPath() + File.separator;
 			icon_path = base_path + "icon" + File.separator;
 		} catch (IOException e) {
+			e.printStackTrace();
 			throw new RuntimeException(e);
 		}
 	}
