@@ -9,6 +9,11 @@
 	</parent>
 	<artifactId>chat-client</artifactId>
 	<packaging>jar</packaging>
+
+	<properties>
+		<release.directory>${project.build.directory}/release</release.directory>
+	</properties>
+
 	<build>
 		<plugins>
 			<plugin>
@@ -22,7 +27,7 @@
 							<goal>copy-dependencies</goal>
 						</goals>
 						<configuration>
-							<outputDirectory>${project.build.directory}/lib</outputDirectory>
+							<outputDirectory>${release.directory}/lib</outputDirectory>
 							<overWriteReleases>false</overWriteReleases>
 							<overWriteSnapshots>false</overWriteSnapshots>
 							<overWriteIfNewer>true</overWriteIfNewer>
@@ -43,11 +48,10 @@
 						</goals>
 						<configuration>
 							<encoding>UTF-8</encoding>
-							<outputDirectory>${project.build.directory}</outputDirectory>
+							<outputDirectory>${release.directory}</outputDirectory>
 							<resources>
 								<resource>
 									<directory>src/main/resources/</directory>
-									<filtering>true</filtering>
 								</resource>
 							</resources>
 						</configuration>
@@ -64,10 +68,11 @@
 							<goal>jar</goal>
 						</goals>
 						<configuration>
-							<classifier>lib</classifier>
+							<outputDirectory>${release.directory}/lib</outputDirectory>
+							<finalName>im-client</finalName>
+							<classifier>release</classifier>
 							<excludes>
-								<exclude>network.cfg</exclude>
-								<exclude>icon/*</exclude>
+								<exclude>*</exclude>
 							</excludes>
 						</configuration>
 					</execution>

@@ -1,8 +1,7 @@
+package com.ghh.chat.server;
 import java.net.SocketException;
 import java.util.concurrent.Executors;
 
-import com.ghh.chat.server.Console;
-import com.ghh.chat.server.ServerCore;
 
 /*
  * StartServer.java

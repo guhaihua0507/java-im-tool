@@ -1,0 +1,1 @@
+call jre\bin\java -Djava.ext.dirs=./lib com.ghh.chat.server.StartServer
